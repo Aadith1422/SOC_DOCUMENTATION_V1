@@ -31,8 +31,6 @@ To determine how the file appeared and assess the extent of unauthorized access,
 - Reviewed the alert indicating suspicious activity on the web server
 - Understood that an unauthorized file appeared unexpectedly
 
-![Alert Overview](Screenshots/01_alert_overview.png)
-
 ---
 
 #### Step 2: PCAP Traffic Analysis
