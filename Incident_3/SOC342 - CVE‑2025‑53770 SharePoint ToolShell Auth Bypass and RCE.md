@@ -43,7 +43,6 @@ Key indicators of exploitation:
 - Abuse of SharePoint ToolPane functionality
 - Spoofed referrer header
 
-![Web Exploit Evidence](Screenshots/02_web_exploit_details.png)
 
 ---
 
