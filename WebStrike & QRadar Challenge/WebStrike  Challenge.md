@@ -110,7 +110,6 @@ Screenshots captured include:
 - Payload analysis
 - Post-exploitation evidence
 
-*(Screenshots placed in the Screenshots directory)*
 
 ---
 

@@ -127,7 +127,34 @@ A phishing alert was generated after a deceptive email offering a **“Free Coff
 
 ---
 
-## 7. Final Verdict
+## 7. Recommended Actions
+
+### Containment
+- Isolate the affected endpoint
+- Block sender domain, sender IP, and URLs at email gateway
+
+### Threat Hunting
+- Search mailboxes for similar emails
+- Identify users who clicked links or opened attachments
+
+### Eradication
+- Remove phishing emails from all mailboxes
+- Delete downloaded payloads
+
+### Mitigation
+- Reset affected user credentials
+- Enforce MFA
+- Update email security rules
+
+### Detect & Prevent
+- Alert on Office spawning PowerShell or CMD
+- Enable attachment sandboxing
+- Conduct phishing awareness training
+
+---
+
+
+## 8. Final Verdict
 
 - **True Positive**  
 - User interaction confirmed  

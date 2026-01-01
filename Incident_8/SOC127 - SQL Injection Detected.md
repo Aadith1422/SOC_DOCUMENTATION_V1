@@ -151,7 +151,27 @@ EXEC xp_cmdshell('cat ../../../../etc/passwd')
 
 ---
 
-## 10. Final Analyst Verdict
+## 10. Recommended Actions
+
+### Containment
+- Block IP ranges
+
+### Threat Hunting
+- Review login events
+
+### Eradication
+- Reset credentials
+
+### Mitigation
+- Enforce MFA
+
+### Detect & Prevent
+- Alert on Event ID 4625
+
+---
+
+
+## 11. Final Analyst Verdict
 
 - **True Positive**
 - Successful SQL Injection attempt
@@ -163,7 +183,7 @@ EXEC xp_cmdshell('cat ../../../../etc/passwd')
 
 ---
 
-## 11. Remediation Recommendations
+## 12. Remediation Recommendations
 
 - Enable and tune **WAF SQLi/XSS rules**
 - Block malicious source IPs
@@ -174,7 +194,7 @@ EXEC xp_cmdshell('cat ../../../../etc/passwd')
 
 ---
 
-## 12. Analyst Notes
+## 13. Analyst Notes
 
 This incident demonstrates how **poor input validation and exposed database functions** can lead to full application compromise.  
 Continuous monitoring, WAF enforcement, and secure coding practices are essential to prevent similar SQL Injection attacks.

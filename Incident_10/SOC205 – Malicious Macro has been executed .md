@@ -123,7 +123,26 @@ powershell.exe (New-Object System.Net.WebClient).DownloadFile(
 
 ---
 
-## 10. Final Verdict
+## 10. Recommended Action
+
+### Containment
+- Isolate systems
+
+### Threat Hunting
+- Review PowerShell logs
+
+### Eradication
+- Remove scripts
+
+### Mitigation
+- Harden PowerShell policies
+
+### Detect & Prevent
+- Alert on encoded commands
+
+---
+
+## 11. Final Verdict
 
 - **True Positive**
 - Macro-based malware execution confirmed
@@ -133,7 +152,7 @@ powershell.exe (New-Object System.Net.WebClient).DownloadFile(
 
 ---
 
-## 11. Analyst Notes
+## 12. Analyst Notes
 
 This case highlights the continued risk of **macro-enabled documents**.  
 Restricting macros and PowerShell remains critical.

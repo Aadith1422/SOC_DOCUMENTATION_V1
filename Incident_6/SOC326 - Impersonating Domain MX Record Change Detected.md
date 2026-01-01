@@ -159,7 +159,27 @@ These IPs are hosted under **Akamai Connected Cloud**, a common abuse platform f
 
 ---
 
-## 10. Final Analyst Verdict
+## 10. Recommended Actions
+
+### Containment
+- Block C2 IPs/domains
+
+### Threat Hunting
+- Analyze DNS and NetFlow
+
+### Eradication
+- Remove malware
+
+### Mitigation
+- Harden egress rules
+
+### Detect & Prevent
+- Alert on beaconing
+
+---
+
+
+## 11. Final Analyst Verdict
 
 - **True Positive**  
 - Successful detection of impersonation attempt  
@@ -172,6 +192,6 @@ These IPs are hosted under **Akamai Connected Cloud**, a common abuse platform f
 
 ---
 
-## 11. Analyst Notes
+## 12. Analyst Notes
 
 This incident demonstrates how **DNS and MX record manipulation** is leveraged to enable phishing campaigns. Continuous monitoring of domain changes and proactive threat intelligence correlation are critical to stopping impersonation attacks before user impact occurs.

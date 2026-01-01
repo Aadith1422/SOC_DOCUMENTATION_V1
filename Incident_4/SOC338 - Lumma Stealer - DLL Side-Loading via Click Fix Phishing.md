@@ -133,7 +133,30 @@ https://windows-update.site/
 
 ---
 
-## 10. Final Analyst Verdict
+## 10. Recommended Actions
+
+### Containment
+- Isolate endpoints
+- Block hashes in EDR
+
+### Threat Hunting
+- Identify persistence
+
+### Eradication
+- Remove malware
+- Reimage if required
+
+### Mitigation
+- Patch OS and apps
+
+### Detect & Prevent
+- Alert on unknown executables
+
+---
+
+
+
+## 11. Final Analyst Verdict
 
 - **True Positive**
 - Lumma Stealer delivery attempt blocked
@@ -142,6 +165,6 @@ https://windows-update.site/
 
 ---
 
-## 11. Analyst Notes
+## 12. Analyst Notes
 
 This incident reinforces the effectiveness of phishing as an initial access vector and highlights the importance of email security controls, user awareness, and proactive threat hunting.

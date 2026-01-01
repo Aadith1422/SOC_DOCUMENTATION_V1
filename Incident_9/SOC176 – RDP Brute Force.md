@@ -128,7 +128,26 @@ This validates a real RDP session.
 
 ---
 
-## 12. Final Analyst Verdict
+## 12. Recommended Actions
+
+### Containment
+- Isolate endpoints
+
+### Threat Hunting
+- Identify macro abuse
+
+### Eradication
+- Remove payloads
+
+### Mitigation
+- Disable macros
+
+### Detect & Prevent
+- Alert on Office → PowerShell
+
+---
+
+## 13. Final Analyst Verdict
 
 - **True Positive**  
 - Successful RDP compromise confirmed  
@@ -138,7 +157,7 @@ This validates a real RDP session.
 
 ---
 
-## 13. Analyst Notes
+## 14. Analyst Notes
 
 This incident demonstrates how exposed RDP services remain a high-risk attack surface.  
 Strong password policies, MFA, IP allowlisting, and continuous monitoring are critical to preventing similar compromises.
