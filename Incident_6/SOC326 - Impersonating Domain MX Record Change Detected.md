@@ -162,21 +162,31 @@ These IPs are hosted under **Akamai Connected Cloud**, a common abuse platform f
 ## 10. Recommended Actions
 
 ### Containment
-- Block C2 IPs/domains
-
-### Threat Hunting
-- Analyze DNS and NetFlow
-
-### Eradication
-- Remove malware
-
-### Mitigation
-- Harden egress rules
-
-### Detect & Prevent
-- Alert on beaconing
+- Block the impersonating domain (`letsdefwnd.io`) and related sender IPs at the email gateway.
+- Remove the phishing email from all user mailboxes.
 
 ---
+
+### Threat Hunting
+- Search email logs for messages from look-alike domains.
+- Identify users who interacted with phishing links.
+- Monitor DNS activity for newly registered domains similar to the organization.
+
+---
+
+### Eradication
+- Ensure all phishing emails are removed.
+- Reset credentials for any users who interacted with the email.
+
+---
+
+### Mitigation & Prevention
+- Enforce SPF, DKIM, and DMARC on the legitimate domain.
+- Enable domain-impersonation and MX-change monitoring.
+- Improve email gateway detection for brand impersonation attacks.
+
+---
+
 
 
 ## 11. Final Analyst Verdict

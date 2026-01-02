@@ -123,22 +123,34 @@ powershell.exe (New-Object System.Net.WebClient).DownloadFile(
 
 ---
 
-## 10. Recommended Action
+## 10. Recommended Actions
 
 ### Containment
-- Isolate systems
+- Immediately isolate the affected host (**Jayne**) from the network.
+- Block the malicious domain (`www.greyhathacker.net`) and resolved IP at firewall and proxy.
+- Quarantine and delete the malicious document from all user endpoints and mailboxes.
+
+---
 
 ### Threat Hunting
-- Review PowerShell logs
+- Search for additional macro-enabled files (`.docm`, `.xlsm`) across endpoints.
+- Review PowerShell logs for suspicious download activity (`System.Net.WebClient`).
+- Identify other users who received or opened the same attachment.
+
+---
 
 ### Eradication
-- Remove scripts
+- Remove any downloaded payloads or scripts from the endpoint.
+- Reset credentials for the affected user as a precaution.
+- Perform a full malware scan to confirm no persistence mechanisms exist.
 
-### Mitigation
-- Harden PowerShell policies
+---
 
-### Detect & Prevent
-- Alert on encoded commands
+### Mitigation & Prevention
+- Disable or restrict Office macros from external documents via Group Policy.
+- Enforce PowerShell Constrained Language Mode and Script Block Logging.
+- Enable email sandboxing for macro-enabled attachments.
+- Apply application allow-listing (AppLocker / WDAC).
 
 ---
 

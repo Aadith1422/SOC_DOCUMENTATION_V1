@@ -1,60 +1,68 @@
-
-# QRadar 101 Challenge – Investigation Report
+# QRadar 101 Challenge – Incident Investigation Report
 
 ## a) QRadar 101 Challenge
 
 ### i) Challenge Overview and Objectives
 
-The **QRadar 101 Challenge** simulates a real-world security incident involving a compromised financial organization. Multiple systems were affected, and alerts indicated the use of known malicious tools, with suspicion of insider involvement.
+The **QRadar 101 Challenge** simulates a real-world security incident involving a compromised financial organization. Multiple systems were affected, alerts indicated the use of known malicious tools, and there was suspicion of insider involvement.
 
-The objective of this challenge was to investigate the incident using **IBM QRadar SIEM**, analyze security logs from multiple sources, correlate events, identify attacker behavior, and reconstruct the complete attack timeline.
+The objective of this challenge was to investigate the incident using **IBM QRadar SIEM**, analyze logs from multiple security sources, correlate events, identify attacker behavior, and reconstruct the complete attack timeline following standard SOC investigation practices.
 
-Key objectives:
-- Understand QRadar SIEM architecture and workflows
-- Perform log analysis and event correlation
-- Identify attacker techniques using MITRE ATT&CK
-- Apply structured SOC investigation methodology
+**Key Objectives:**
+- Understand QRadar SIEM architecture and workflows  
+- Perform log analysis and event correlation  
+- Identify attacker techniques using MITRE ATT&CK  
+- Apply structured SOC investigation methodology  
 
 ---
 
 ### ii) Step-by-Step Methodology Followed
 
-1. Reviewed the incident scenario and identified investigation scope.  
-2. Identified available log sources (Sysmon, PowerShell, Windows Event Logs, Suricata IDS, Zeek).  
-3. Analyzed logs using filters based on event IDs, payloads, IPs, usernames, and timestamps.  
-4. Correlated events to identify initial access, persistence, lateral movement, and exfiltration.  
-5. Mapped attacker techniques to MITRE ATT&CK (e.g., T1547.001 – Registry Run Keys).  
-6. Validated findings by cross-referencing logs and timelines.
+1. Reviewed the incident scenario and defined the investigation scope.  
+2. Identified available log sources including Sysmon, PowerShell, Windows Event Logs, Suricata IDS, and Zeek.  
+3. Applied filters based on event IDs, payload keywords, IP addresses, usernames, and timestamps.  
+4. Correlated events across multiple systems to identify attack stages such as initial access, persistence, lateral movement, and data exfiltration.  
+5. Mapped identified attacker behaviors to MITRE ATT&CK techniques (e.g., T1547.001 – Registry Run Keys).  
+6. Validated findings by cross-referencing logs and constructing a timeline of events.
 
 ---
 
-### iii) Screenshots Showing Progress and Key Investigation Steps
+### iii) Screenshots and Evidence Documentation
 
-Screenshots from the QRadar 101 walkthrough and reference materials were captured to document:
-- Log source configuration
-- Event filtering and analysis
-- Detection of malicious activity
-- MITRE ATT&CK mapping
+Screenshots from the QRadar 101 walkthrough and reference materials were used to document:
+- Log source configuration  
+- Event filtering and analysis  
+- Detection of malicious activity  
+- MITRE ATT&CK technique mapping  
 
-> Note: Due to enterprise resource requirements, a stable local QRadar deployment was not feasible. Screenshots from the walkthrough were used to document the investigation process.
+> **Note:** Due to the high resource requirements of QRadar Community Edition, a stable local deployment was not feasible. Walkthrough-based screenshots were used to demonstrate investigation logic and analysis steps.
 
 ---
 
-### iv) Summary of Key Findings, Challenges Faced, and Resolutions
+### iv) Summary of Key Findings, Challenges, and Resolutions
 
 **Key Findings:**
-- Initial infection via malicious document
-- Lateral movement across internal systems
-- Persistence via Windows Registry Run Keys
-- Data exfiltration using command-line tools
+- Initial infection occurred through a malicious document opened by an internal user.  
+- The attacker executed commands using PowerShell.  
+- Persistence was established via Windows Registry Run Keys.  
+- Lateral movement occurred across internal systems.  
+- Sensitive data was exfiltrated using command-line tools.
 
 **Challenges Faced:**
-- High resource requirements of QRadar Community Edition
-- Difficulty maintaining stable local deployment
+- High system resource requirements for QRadar deployment.  
+- Difficulty maintaining a stable enterprise SIEM environment locally.
 
 **Resolutions:**
-- Completed investigation using a walkthrough-based approach
-- Focused on SOC analysis methodology and threat detection logic
+- Conducted investigation using official walkthrough material.  
+- Focused on SOC analysis methodology, correlation logic, and attacker behavior rather than tool deployment.
+
+---
+
+### v) Attack Walkthrough Summary (Investigation Narrative)
+
+Based on log correlation and timeline analysis in IBM QRadar, the attacker carried out a multi-stage compromise. The attack began with a malicious document delivered to an internal employee, leading to PowerShell-based command execution. The attacker established persistence by modifying Windows Registry Run Keys and created additional access mechanisms to maintain control.
+
+Following initial compromise, the attacker performed internal host discovery and moved laterally across systems using administrative-style tools. Logs revealed interaction with the domain controller and targeted searches for project-related data. The incident concluded with successful data exfiltration, confirming a full breach of the environment.
 
 ---
 
@@ -63,9 +71,9 @@ Screenshots from the QRadar 101 walkthrough and reference materials were capture
 | Aspect | WebStrike | QRadar 101 |
 |------|----------|------------|
 | Focus | Network & Web Attacks | SIEM-Based Investigation |
-| Data | PCAP, Web Logs | Aggregated Security Logs |
-| Tools | Wireshark | IBM QRadar |
-| Learning | Attack Execution | Attack Detection |
+| Data Sources | PCAP, Web Logs | Aggregated Security Logs |
+| Tools Used | Wireshark | IBM QRadar |
+| Learning Outcome | Attack Execution | Attack Detection & Correlation |
 
 Together, both challenges provided end-to-end visibility from attack execution to detection and response.
 
@@ -73,10 +81,10 @@ Together, both challenges provided end-to-end visibility from attack execution t
 
 ## c) Conclusion: SOC Skill Enhancement
 
-These challenges enhanced:
-- Incident investigation workflows
-- Log correlation and analysis
-- Threat detection and MITRE ATT&CK mapping
-- SOC analyst decision-making skills
+Completing the WebStrike and QRadar 101 challenges enhanced practical SOC skills including:
+- Incident investigation workflows  
+- Multi-source log correlation  
+- Threat detection and MITRE ATT&CK mapping  
+- Analytical decision-making in SOC environments  
 
-Overall, the tasks provided strong exposure to real-world SOC operations and enterprise SIEM investigations.
+Overall, these challenges provided strong exposure to real-world SOC operations and enterprise SIEM investigations.

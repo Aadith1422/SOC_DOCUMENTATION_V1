@@ -131,21 +131,35 @@ This validates a real RDP session.
 ## 12. Recommended Actions
 
 ### Containment
-- Isolate endpoints
-
-### Threat Hunting
-- Identify macro abuse
-
-### Eradication
-- Remove payloads
-
-### Mitigation
-- Disable macros
-
-### Detect & Prevent
-- Alert on Office → PowerShell
+- Immediately isolate the compromised host (**Matthew**) from the network.
+- Block the attacker IP (**218.92.0.56**) at firewall level.
+- Disable RDP access temporarily.
 
 ---
+
+### Threat Hunting
+- Review authentication logs for additional successful RDP logins.
+- Identify other hosts exposed to RDP from external networks.
+- Check for lateral movement or suspicious post-login activity.
+
+---
+
+### Eradication
+- Reset credentials for the compromised user account.
+- Terminate active RDP sessions.
+- Scan the host for malware, persistence mechanisms, or unauthorized tools.
+
+---
+
+### Mitigation & Prevention
+- Enforce strong password policies and account lockout thresholds.
+- Enable Multi-Factor Authentication (MFA) for RDP.
+- Restrict RDP access using VPN or IP allowlisting.
+- Disable direct internet-facing RDP where possible.
+- Create alerts for repeated RDP failures followed by success.
+
+---
+
 
 ## 13. Final Analyst Verdict
 

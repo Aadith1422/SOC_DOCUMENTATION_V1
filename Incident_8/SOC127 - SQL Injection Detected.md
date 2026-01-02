@@ -154,21 +154,34 @@ EXEC xp_cmdshell('cat ../../../../etc/passwd')
 ## 10. Recommended Actions
 
 ### Containment
-- Block IP ranges
-
-### Threat Hunting
-- Review login events
-
-### Eradication
-- Reset credentials
-
-### Mitigation
-- Enforce MFA
-
-### Detect & Prevent
-- Alert on Event ID 4625
+- Block the attacker IP (**118.194.247.28**) at firewall and WAF.
+- Temporarily isolate **WebServer1000** if active exploitation is ongoing.
+- Disable vulnerable application endpoints if required.
 
 ---
+
+### Threat Hunting
+- Review web server and WAF logs for additional SQLi payloads.
+- Search for database queries involving `UNION`, `information_schema`, or `xp_cmdshell`.
+- Identify any abnormal outbound connections from the web server.
+
+---
+
+### Eradication
+- Disable dangerous database features such as `xp_cmdshell`.
+- Rotate database credentials used by the web application.
+- Remove any web shells or unauthorized files if found.
+
+---
+
+### Mitigation & Prevention
+- Implement parameterized queries / prepared statements in application code.
+- Enforce least-privilege permissions for database service accounts.
+- Enable and tune WAF rules for SQLi and XSS detection.
+- Apply secure input validation and output encoding.
+
+---
+
 
 
 ## 11. Final Analyst Verdict

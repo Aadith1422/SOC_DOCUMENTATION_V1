@@ -136,23 +136,34 @@ https://windows-update.site/
 ## 10. Recommended Actions
 
 ### Containment
-- Isolate endpoints
-- Block hashes in EDR
-
-### Threat Hunting
-- Identify persistence
-
-### Eradication
-- Remove malware
-- Reimage if required
-
-### Mitigation
-- Patch OS and apps
-
-### Detect & Prevent
-- Alert on unknown executables
+- Isolate the affected endpoint (**Dylan**) if execution is suspected.
+- Block the phishing domain (`windows-update.site`) and related sender IPs.
+- Revoke active user and browser sessions.
 
 ---
+
+### Threat Hunting
+- Search email logs for similar phishing messages.
+- Hunt for DLL side-loading activity and suspicious update        installers.
+- Monitor for browser credential access behavior.
+  
+---
+
+### Eradication
+- Remove malicious files and DLLs.
+- Reset affected user credentials.
+- Reimage the endpoint if Lumma Stealer execution is confirmed.
+
+---
+
+### Mitigation & Prevention
+- Strengthen email filtering for fake update lures.
+- Apply application allow-listing (AppLocker / WDAC).
+- Alert on DLL side-loading and phishing-triggered executions.
+- Conduct phishing awareness training.
+
+---
+
 
 
 
